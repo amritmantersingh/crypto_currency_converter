@@ -62,8 +62,8 @@ class ConvertForm extends Component {
         }
         await req.then(()=>{
                 const amount = this.props.formData[form].values.amount;
-                const inputCurrency = this.props.formData[form].values.sourceCurrency;
-                const outputCurrency = this.props.formData[form].values.targetCurrency;
+                const inputCurrency = this.props.formData[form].values.currencySource;
+                const outputCurrency = this.props.formData[form].values.currencyTarget;
                 const convertedAmount = convert(amount, inputCurrency, outputCurrency)
                 this.props.onCalculate(convertedAmount);
             }
@@ -125,7 +125,7 @@ class ConvertForm extends Component {
 }
 ConvertForm = connect(mapStateToProps, mapDispatchToProps)(reduxForm({
     form: 'currency_converter',
-    initialValues: { sourceCurrency: "bitcoin", targetCurrency: "ethereum" }
+    initialValues: { currencySource: "bitcoin", currencyTarget: "ethereum" }
 })(ConvertForm));
 
 export default ConvertForm;
