@@ -3,9 +3,6 @@ import CurrencySelect from './Select';
 import { Field } from 'redux-form';
 
 export default class CurrencySelectField extends Component {
-    constructor(props) {
-        super(props);
-    }
     render () {
         const name = this.props.name;
         const value = () => {

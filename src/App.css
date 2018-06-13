@@ -25,3 +25,32 @@ h3 {
   padding-left: 20px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 460px) {
+  .input_amount,
+  .input_currency {
+    display: block;
+    width: 100%;
+    margin-right: 0 !important;
+  }
+  .input_currency {
+    margin-bottom: 12px;
+  }
+  .container__inner {
+    display: block;
+  }
+  button {
+    width: 100%;
+    display: block;
+    margin-top: 16px !important;
+  }
+  .container__inner > span,
+  .container__inner label {
+    display: block;
+    text-align: center;
+    background-color: #eaeaea;
+    padding: 4px;
+    border-radius: 8px;
+    width: 20%;
+    margin: 8px auto 0;
+  }
+}
