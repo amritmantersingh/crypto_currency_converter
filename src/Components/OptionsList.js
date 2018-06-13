@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List } from "react-virtualized";
+import { List, AutoSizer } from "react-virtualized";
 import MenuItem from '@material-ui/core/MenuItem';
 
 
@@ -31,14 +31,18 @@ export default class OptionsList extends Component {
     };
     render () {
         return (
-            <List
-                width={200}
-                height={500}
-                style={{outline: 'none'}}
-                rowCount={this.props.data.length}
-                rowHeight={40}
-                rowRenderer={this.rowRenderer}
-            />
+            <AutoSizer disableHeight>
+                {({ width }) => (
+                    <List
+                        width={width}
+                        height={500}
+                        style={{outline: 'none'}}
+                        rowCount={this.props.data.length}
+                        rowHeight={40}
+                        rowRenderer={this.rowRenderer}
+                    />
+                )}
+            </AutoSizer>
         )
     }
 }
